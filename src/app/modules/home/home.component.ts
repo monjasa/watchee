@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../../core/services/movie.service';
-import { Movie } from '../../shared/models/movie.model';
+import { TrendingMovie } from '../../shared/models/trending-movie.model';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { Movie } from '../../shared/models/movie.model';
 })
 export class HomeComponent implements OnInit {
 
-  public trendingMovies?: Movie[];
+  public trendingMovies?: TrendingMovie[];
 
   constructor(private movieService: MovieService) { }
 

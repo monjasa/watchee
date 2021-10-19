@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Movie } from '../../../shared/models/movie.model';
+import { TrendingMovie } from '../../../shared/models/trending-movie.model';
 
 @Component({
   selector: 'home-trending-movies-carousel',
@@ -9,6 +9,6 @@ import { Movie } from '../../../shared/models/movie.model';
 export class TrendingMoviesCarouselComponent {
 
   @Input()
-  public movies?: Movie[];
+  public movies?: TrendingMovie[];
 
 }
