@@ -1,0 +1,32 @@
+<div id="trendingMoviesCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button *ngFor="let movie of movies; index as i; first as isFirst" type="button" data-bs-target="#carouselCaptions"
+            [class.active]="isFirst" [attr.data-bs-slide-to]="i" [attr.aria-current]="isFirst" [attr.aria-label]="movie.title"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div *ngFor="let movie of movies; first as isFirst" class="carousel-item" [class.active]="isFirst">
+      <div class="carousel-item-image">
+        <img src="https://image.tmdb.org/t/p/original/{{movie.backdrop_path}}"
+             class="d-block w-100" alt="{{movie.title}} Backdrop">
+      </div>
+      <div class="carousel-caption">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h1 class="display-1">{{movie.title}}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#trendingMoviesCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#trendingMoviesCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
