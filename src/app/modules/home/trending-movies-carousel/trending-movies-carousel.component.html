@@ -7,13 +7,12 @@
   <div class="carousel-inner">
     <div *ngFor="let movie of movies; first as isFirst" class="carousel-item" [class.active]="isFirst">
       <div class="carousel-item-image">
-        <img src="https://image.tmdb.org/t/p/original/{{movie.backdrop_path}}"
-             class="d-block w-100" alt="{{movie.title}} Backdrop">
+        <img src="{{movie.backdrop_path | backdropPathUrl}}" class="d-block w-100" alt="{{movie.title}} Backdrop">
       </div>
       <div class="carousel-caption">
         <div class="d-flex justify-content-between">
           <div>
-            <h1 class="display-1">{{movie.title}}</h1>
+            <h1 class="display-5">{{movie.title}}</h1>
           </div>
         </div>
       </div>

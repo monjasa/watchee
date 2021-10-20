@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AuthorizationInterceptor } from './authorization.interceptor.service';
+import { AuthorizationInterceptor } from './authorization.interceptor';
 
-describe('AuthorizationTokenInterceptor', () => {
+describe('AuthorizationInterceptor', () => {
   beforeEach(() => TestBed.configureTestingModule({
     providers: [
       AuthorizationInterceptor
