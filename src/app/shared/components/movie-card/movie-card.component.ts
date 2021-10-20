@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Movie } from '../../models/movie.model';
 import { GenreService } from '../../../core/services/genre.service';
 import { Genre } from '../../models/genre.model';
+import { PosterSize } from '../../models/enums/poster-size.model';
 
 @Component({
   selector: 'shared-movie-card',
@@ -26,5 +27,9 @@ export class MovieCardComponent {
     this._movie = movie;
     this.genreService.getAll()
       .subscribe(genres => this.genres = movie.genre_ids.map(genreId => genres.get(genreId) as Genre));
+  }
+
+  get posterSize(): typeof PosterSize {
+    return PosterSize;
   }
 }

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Movie } from '../../../shared/models/movie.model';
+import { BackdropSize } from '../../../shared/models/enums/backdrop-size.model';
 
 @Component({
   selector: 'home-trending-movies-carousel',
@@ -16,5 +17,9 @@ export class TrendingMoviesCarouselComponent {
   @Input()
   set moviesModel(value: Movie[]) {
     this.movies = value.slice(0, this.numberOfItems);
+  }
+
+  get backdropSize(): typeof BackdropSize {
+    return BackdropSize;
   }
 }
