@@ -14,11 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
-    this.movieService.getTrending()
+    this.movieService.getAllTrending()
       .subscribe(movies => this.trendingMovies = movies);
-  }
-
-  public getTrendingMoviesForCarousel() {
-    return this.trendingMovies.slice(0, 3);
   }
 }

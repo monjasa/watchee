@@ -11,22 +11,23 @@ import { PosterSize } from '../../models/enums/poster-size.model';
 })
 export class MovieCardComponent {
 
-  public genres!: Genre[];
+  public genres: Genre[] = [];
 
-  private _movie!: Movie;
+  private _movie: Movie;
 
   constructor(private genreService: GenreService) {
-  }
-
-  get movie(): Movie {
-    return this._movie;
   }
 
   @Input()
   set movie(movie: Movie) {
     this._movie = movie;
     this.genreService.getAll()
-      .subscribe(genres => this.genres = movie.genre_ids.map(genreId => genres.get(genreId) as Genre));
+      .subscribe(genres => this.genres = movie?.genre_ids.map(genreId => genres.get(genreId) as Genre));
+  }
+
+  get movie(): Movie {
+    console.log(this._movie.release_date)
+    return this._movie;
   }
 
   get posterSize(): typeof PosterSize {

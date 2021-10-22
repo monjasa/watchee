@@ -14,22 +14,16 @@ export class MovieService {
   constructor(private http: HttpClient) {
   }
 
-  public getTrending(): Observable<Movie[]> {
+  public getAllTrending(): Observable<Movie[]> {
     return this.http
       .get<Page<Movie>>(`${environment.apiUrl}/trending/movie/week`)
       .pipe(
-        map(page => page.results)
+        map(page => page.results),
       );
   }
 
   public getById(id: number): Observable<Movie> {
     return this.http
       .get<Movie>(`${environment.apiUrl}/movie/${id}`);
-  }
-
-  private static interpolateMovieImagePaths(movie: Movie): Movie {
-    movie.poster_path = `https://image.tmdb.org/t/p/w342/${movie.poster_path}`;
-    movie.backdrop_path = `https://image.tmdb.org/t/p/original/${movie.backdrop_path}`;
-    return movie;
   }
 }

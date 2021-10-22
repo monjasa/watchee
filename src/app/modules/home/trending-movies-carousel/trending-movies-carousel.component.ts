@@ -9,14 +9,18 @@ import { BackdropSize } from '../../../shared/models/enums/backdrop-size.model';
 })
 export class TrendingMoviesCarouselComponent {
 
-  public movies: Movie[] = [];
+  private _movies: Movie[] = [];
 
   @Input()
   public numberOfItems: number = 3;
 
   @Input()
-  set moviesModel(value: Movie[]) {
-    this.movies = value.slice(0, this.numberOfItems);
+  set movies(value: Movie[]) {
+    this._movies = value.slice(0, this.numberOfItems);
+  }
+
+  get movies(): Movie[] {
+    return this._movies;
   }
 
   get backdropSize(): typeof BackdropSize {

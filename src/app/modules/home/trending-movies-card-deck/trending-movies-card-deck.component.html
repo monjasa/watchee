@@ -1,4 +1,9 @@
-<h1 class="text-light">Trending</h1>
-<div class="d-flex flex-row flex-nowrap overflow-auto">
-  <shared-movie-card *ngFor="let movie of movies" [movie]="movie"></shared-movie-card>
+<div class="container-fluid px-5 my-5">
+  <div class="row">
+    <h1>Trending</h1>
+    <div class="deck d-flex flex-row flex-nowrap overflow-auto py-3">
+      <shared-movie-card *ngFor="let movie of movies" [movie]="movie"></shared-movie-card>
+    </div>
+  </div>
+
 </div>

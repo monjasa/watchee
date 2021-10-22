@@ -1,0 +1,14 @@
+@import "fonts";
+
+/*
+ * Typography
+ */
+
+$font-family-sans-serif: "Cabin", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+/*
+ * Body
+ */
+
+$body-color: hsl(210, 1%, 98%);
+$body-bg: hsl(255, 10%, 8%);

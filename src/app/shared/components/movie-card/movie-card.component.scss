@@ -1,0 +1,11 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+.movie-card {
+  width: 200px;
+
+  .poster-image {
+    border-radius: 10px;
+  }
+}
+
