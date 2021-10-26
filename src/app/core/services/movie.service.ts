@@ -16,7 +16,23 @@ export class MovieService {
 
   public getAllTrending(): Observable<Movie[]> {
     return this.http
-      .get<Page<Movie>>(`${environment.apiUrl}/trending/movie/week`)
+      .get<Page<Movie>>(`${environment.apiUrl}/trending/movie/day`)
+      .pipe(
+        map(page => page.results),
+      );
+  }
+
+  public getAllDiscover(): Observable<Movie[]> {
+    return this.http
+      .get<Page<Movie>>(`${environment.apiUrl}/discover/movie`)
+      .pipe(
+        map(page => page.results),
+      );
+  }
+
+  public getAllDiscoverByGenreIds(genreIds: number[]): Observable<Movie[]> {
+    return this.http
+      .get<Page<Movie>>(`${environment.apiUrl}/discover/movie`, {params: {with_genres: genreIds.join(',')}})
       .pipe(
         map(page => page.results),
       );

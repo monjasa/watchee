@@ -1,0 +1,3 @@
+<div class="group d-flex flex-row flex-nowrap overflow-auto py-3">
+  <shared-movie-card *ngFor="let movie of movies" [movie]="movie" (movieCardSelect)="onMovieCardSelect($event)"></shared-movie-card>
+</div>

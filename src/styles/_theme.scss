@@ -1,3 +1,26 @@
 /*
  * Default theme customization
  */
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+.btn {
+  border: none;
+}
+
+.bg-primary,
+.btn-primary,
+.badge-primary,
+.alert-primary {
+  background: linear-gradient(to right, #DC281E, #F00000);
+  color: $light;
+}
+
+.bg-secondary,
+.btn-secondary,
+.badge-secondary,
+.alert-secondary {
+  background: linear-gradient(to right, #232526, #242626);
+  color: $light;
+}

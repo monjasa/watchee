@@ -3,16 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { TrendingMoviesCarouselComponent } from './trending-movies-carousel/trending-movies-carousel.component';
-import { TrendingMoviesCardDeckComponent } from './trending-movies-card-deck/trending-movies-card-deck.component';
+import { TrendingMovieCarouselComponent } from './trending-movie-carousel/trending-movie-carousel.component';
+import { TrendingMovieCardGroupComponent } from './trending-movie-card-group/trending-movie-card-group.component';
 import { SharedModule } from '../../shared/shared.module';
+import { DiscoverMovieCardGroupComponent } from './discover-movie-card-group/discover-movie-card-group.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    TrendingMoviesCarouselComponent,
-    TrendingMoviesCardDeckComponent,
+    TrendingMovieCarouselComponent,
+    TrendingMovieCardGroupComponent,
+    DiscoverMovieCardGroupComponent,
   ],
   imports: [
     CommonModule,

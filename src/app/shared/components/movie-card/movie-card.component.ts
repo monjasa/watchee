@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Movie } from '../../models/movie.model';
 import { GenreService } from '../../../core/services/genre.service';
 import { Genre } from '../../models/genre.model';
@@ -13,9 +13,16 @@ export class MovieCardComponent {
 
   public genres: Genre[] = [];
 
+  @Output()
+  public movieCardSelect: EventEmitter<Movie> = new EventEmitter<Movie>();
+
   private _movie: Movie;
 
   constructor(private genreService: GenreService) {
+  }
+
+  public select() {
+    this.movieCardSelect.emit(this._movie);
   }
 
   @Input()
@@ -26,7 +33,6 @@ export class MovieCardComponent {
   }
 
   get movie(): Movie {
-    console.log(this._movie.release_date)
     return this._movie;
   }
 

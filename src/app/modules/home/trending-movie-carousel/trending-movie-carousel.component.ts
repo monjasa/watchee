@@ -3,11 +3,11 @@ import { Movie } from '../../../shared/models/movie.model';
 import { BackdropSize } from '../../../shared/models/enums/backdrop-size.model';
 
 @Component({
-  selector: 'home-trending-movies-carousel',
-  templateUrl: './trending-movies-carousel.component.html',
-  styleUrls: ['./trending-movies-carousel.component.scss']
+  selector: 'home-trending-movie-carousel',
+  templateUrl: './trending-movie-carousel.component.html',
+  styleUrls: ['./trending-movie-carousel.component.scss']
 })
-export class TrendingMoviesCarouselComponent {
+export class TrendingMovieCarouselComponent {
 
   private _movies: Movie[] = [];
 

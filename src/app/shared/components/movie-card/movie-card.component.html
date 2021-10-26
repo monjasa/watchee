@@ -1,7 +1,8 @@
 <div class="movie-card">
-  <img src="{{movie.poster_path | posterUrl:posterSize.Medium}}" class="d-block img-fluid poster-image"
-       alt="{{movie.title}} Poster">
-  <h5 class="text-truncate mt-2 mb-1">{{movie.title}}</h5>
+  <img (click)="select()" src="{{movie.poster_path | posterUrl:posterSize.Medium}}"
+       class="poster-image d-block img-fluid" alt="{{movie.title}} Poster">
+
+  <h5 (click)="select()" class="title text-truncate mt-2 mb-1">{{movie.title}}</h5>
 
   <div class="text-secondary">
     <span>{{genres[0]?.name}}</span>
@@ -15,7 +16,7 @@
       <span> {{movie.vote_average | number:'1.1-1'}}</span>
     </div>
     <div>
-      <i class=" fa-heart text-danger" [ngClass]="movie.vote_average > 7.0 ? 'fas' : 'far'"></i>
+      <i class=" fa-heart text-primary" [ngClass]="movie.vote_average > 7.5 ? 'fas' : 'far'"></i>
     </div>
   </div>
 </div>
