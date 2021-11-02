@@ -1,9 +1,9 @@
 {
   "name": "watchee",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "start-host": "ng serve --host 0.0.0.0",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
@@ -21,6 +21,7 @@
     "@angular/router": "~12.2.12",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "bootstrap": "^5.1.3",
+    "express": "^4.17.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
