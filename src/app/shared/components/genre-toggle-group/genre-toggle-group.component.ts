@@ -16,7 +16,7 @@ export class GenreToggleGroupComponent {
 
   @Output() genreToggleGroupChange = new EventEmitter<Genre[]>();
 
-  groupChange() {
+  public groupChange() {
     this.genreToggleGroupChange.emit(
       this.genreToggles.toArray()
         .filter(toggle => toggle.isChecked)

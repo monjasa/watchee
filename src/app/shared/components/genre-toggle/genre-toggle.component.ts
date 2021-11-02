@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Genre } from '../../models/genre.model';
 
 @Component({
@@ -11,6 +11,12 @@ export class GenreToggleComponent  {
   @Input()
   public genre: Genre;
 
+  @Output()
+  public genreToggleChange = new EventEmitter<GenreToggleComponent>();
+
   public isChecked: boolean;
 
+  public toggleChange() {
+    this.genreToggleChange.emit(this);
+  }
 }

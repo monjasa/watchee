@@ -1,4 +1,4 @@
 <div class="group d-flex flex-row flex-nowrap overflow-auto py-3">
-  <shared-genre-toggle #toggle *ngFor="let genre of genres" [genre]="genre" (change)="groupChange()"></shared-genre-toggle>
+  <shared-genre-toggle #toggle *ngFor="let genre of genres" [genre]="genre" (genreToggleChange)="groupChange()"></shared-genre-toggle>
 </div>
 

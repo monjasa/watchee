@@ -1,0 +1,11 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+.backdrop {
+  background-size: cover;
+  background-position: center;
+}
+
+.tagline {
+  color: $gray-400;
+}

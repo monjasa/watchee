@@ -1,2 +1,4 @@
-<p>movie works!</p>
-<p>{{movie?.title}}</p>
+<div class="container-fluid px-0">
+  <movie-backdrop-jumbotron [movie]="movie"></movie-backdrop-jumbotron>
+  <movie-similar-movie-card-group [movies]="similarMovies"></movie-similar-movie-card-group>
+</div>

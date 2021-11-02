@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { Page } from '../../shared/models/common/page.model';
 import { map } from 'rxjs/operators';
+import { MovieDetails } from '../../shared/models/movie-details.model';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,11 @@ import { map } from 'rxjs/operators';
 export class MovieService {
 
   constructor(private http: HttpClient) {
+  }
+
+  public getById(id: number): Observable<MovieDetails> {
+    return this.http
+      .get<MovieDetails>(`${environment.apiUrl}/movie/${id}`);
   }
 
   public getAllTrending(): Observable<Movie[]> {
@@ -38,8 +44,11 @@ export class MovieService {
       );
   }
 
-  public getById(id: number): Observable<Movie> {
+  public getAllSimilarById(id: number): Observable<Movie[]> {
     return this.http
-      .get<Movie>(`${environment.apiUrl}/movie/${id}`);
+      .get<Page<Movie>>(`${environment.apiUrl}/movie/${id}/similar`)
+      .pipe(
+        map(page => page.results),
+      );
   }
 }

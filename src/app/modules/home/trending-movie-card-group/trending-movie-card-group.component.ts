@@ -12,5 +12,4 @@ export class TrendingMovieCardGroupComponent {
   @Input()
   public movies: Movie[] = [];
 
-
 }

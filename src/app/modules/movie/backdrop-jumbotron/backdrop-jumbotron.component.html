@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="backdrop col-12 min-vh-100 position-relative bg-image text-center mb-5"
+         [style.background-image]="movie ? 'linear-gradient(to bottom, hsla(0, 0%, 0%, 0.20), hsla(0, 0%, 0%, 0.60)),' +
+          'url(' + (movie.backdrop_path | backdropUrl:backdropSize.Original) + ')' : null">
+      <div class="position-absolute bottom-0 mb-3 mx-3 mb-lg-5 mx-lg-5 text-start">
+        <h1 class="display-1 text-light">{{movie?.title}}</h1>
+        <p class="tagline fs-5">{{movie?.tagline}}</p>
+      </div>
+    </div>
+  </div>
+</div>

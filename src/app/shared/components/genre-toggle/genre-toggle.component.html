@@ -1,2 +1,4 @@
-<input [(ngModel)]="isChecked" type="checkbox" class="btn-check d-none" id="genreToggle{{genre.id}}" autocomplete="off">
-<label [ngClass]="isChecked ? 'btn-primary' : 'btn-secondary'" class="btn text-nowrap px-4" for="genreToggle{{genre.id}}">{{genre.name}}</label>
+<input [(ngModel)]="isChecked" (ngModelChange)="toggleChange()" type="checkbox" class="btn-check d-none"
+       id="genreToggle{{genre.id}}" autocomplete="off">
+<label [ngClass]="isChecked ? 'btn-primary' : 'btn-secondary'" class="btn text-nowrap px-4"
+       for="genreToggle{{genre.id}}">{{genre.name}}</label>

@@ -1,7 +1,6 @@
 export interface Movie {
   id: number;
   title: string;
-  overview: string;
   release_date: Date;
   genre_ids: number[];
   poster_path: string;
