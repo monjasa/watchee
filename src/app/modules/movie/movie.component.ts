@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MovieService } from '../../core/services/movie.service';
-import { switchMap, take } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 import { MovieDetails } from '../../shared/models/movie-details.model';
 import { Movie } from '../../shared/models/movie.model';
 import { of, zip } from 'rxjs';
@@ -29,7 +29,7 @@ export class MovieComponent implements OnInit {
       ([movie, similarMovies]) => {
         this.movie = movie;
         this.similarMovies = similarMovies;
-      }, error => {
+      }, () => {
         this.router.navigate(['404'], { skipLocationChange: true });
       },
     );

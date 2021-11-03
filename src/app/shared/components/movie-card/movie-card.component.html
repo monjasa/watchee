@@ -1,5 +1,5 @@
 <div class="movie-card">
-  <img (click)="select()" src="{{movie.poster_path | posterUrl:posterSize.Medium}}"
+  <img (click)="select()" src="{{movie.poster_path ? (movie.poster_path | posterUrl:posterSize.Medium) : './assets/images/poster-placeholder.png'}}"
        class="poster-image d-block img-fluid" alt="{{movie.title}} Poster">
 
   <h5 (click)="select()" class="title text-truncate mt-2 mb-1">{{movie.title}}</h5>

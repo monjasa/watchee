@@ -24,3 +24,16 @@
   background: linear-gradient(to right, #232526, #242626);
   color: $light;
 }
+
+::-webkit-scrollbar {
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(to right, #232526, #242626);
+}
