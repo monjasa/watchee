@@ -2,7 +2,7 @@
   <img (click)="select()" src="{{movie.poster_path ? (movie.poster_path | posterUrl:posterSize.Medium) : './assets/images/poster-placeholder.png'}}"
        class="poster-image d-block img-fluid" alt="{{movie.title}} Poster">
 
-  <h5 (click)="select()" class="title text-truncate mt-2 mb-1">{{movie.title}}</h5>
+  <h5 (click)="select()" class="title text-truncate mt-3">{{movie.title}}</h5>
 
   <div class="text-secondary">
     <span>{{genres[0]?.name}}</span>
@@ -10,8 +10,8 @@
     <span>{{movie.release_date | date:'y'}}</span>
   </div>
 
-  <div class="d-flex justify-content-between align-item-center">
-    <div class="text-warning mt-2">
+  <div class="d-flex justify-content-between align-item-center mt-1">
+    <div class="text-warning">
       <i class="fas fa-star"></i>
       <span> {{movie.vote_average | number:'1.1-1'}}</span>
     </div>
